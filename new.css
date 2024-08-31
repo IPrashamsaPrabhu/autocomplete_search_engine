@@ -1,0 +1,167 @@
+/* Set a background image for the whole page */
+body {
+    background-image: url('images/bg1.webp'); /* Path to your background image */
+    background-size: cover; /* Make sure the image covers the whole page */
+    background-position: center; /* Center the image */
+    background-repeat: repeat-y;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly higher opacity for better contrast */
+    padding: 30px; /* Increased padding */
+    border-radius: 10px; /* More rounded corners */
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    position: relative; /* Ensure it's positioned relative for spinner positioning */
+}
+
+.container.dark-theme {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Header style */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Input box styles */
+#search-box {
+    width: calc(100% - 80px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+#search-box:focus {
+    border-color: #007BFF; /* Accent color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on focus */
+}
+
+/* Clear button styles */
+#clear-btn {
+    margin-left: 10px;
+    padding: 8px 15px; /* Adjusted padding */
+    border: none;
+    background-color: #007BFF; /* Accent color */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+#clear-btn:hover {
+    background-color: #0056b3; /* Darker shade */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Suggestions list styles */
+#suggestions-list {
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 5px;
+    width: 100%;
+    max-height: 200px; /* Increased height */
+    overflow-y: auto;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000;
+    margin-top: 5px;
+    position: absolute; /* Ensure it's positioned below search box */
+}
+
+.suggestion-item {
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, padding-left 0.3s; /* Smooth transition */
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+    padding-left: 15px; /* Slight padding increase on hover */
+}
+
+.suggestion-item:focus {
+    outline: 2px solid #007BFF; /* Blue outline for focus */
+    background-color: #f0f0f0;
+}
+
+/* Spinner styles */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007BFF; /* Accent color */
+    border-radius: 50%;
+    width: 40px; /* Slightly larger */
+    height: 40px; /* Slightly larger */
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hidden class for spinner and clear button */
+.hidden {
+    display: none;
+}
+
+/* Theme Toggle Button Styles */
+#theme-toggle-btn {
+    margin-top: 20px;
+    padding: 12px 20px; /* Adjusted padding */
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Accent color */
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+#theme-toggle-btn:hover {
+    background-color: #0056b3; /* Darker shade */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Mic Button Styles */
+#mic-btn {
+    margin-left: 10px;
+    padding: 10px; /* Increased padding */
+    border: none;
+    background-color: #007BFF; /* Accent color */
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+#mic-btn:hover {
+    background-color: #0056b3; /* Darker shade */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#mic-btn img {
+    width: 24px; /* Larger icon */
+    height: 24px; /* Larger icon */
+}
